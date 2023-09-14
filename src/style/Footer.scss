@@ -1,0 +1,43 @@
+@import "./mixin.scss";
+
+.footer-container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  display: grid;
+  grid-template-columns: 180px 1fr 1fr 1fr 1.2fr;
+  @include ContainerPadding;
+
+  .footer-section,
+  .section-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 5px;
+
+    text-align: center;
+
+    h2 {
+      padding-bottom: 10px;
+    }
+  }
+
+  .footer-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .icon {
+    @include IconColor;
+  }
+
+  a {
+    font-family: Noto Sans TC;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0px;
+    color: #808080;
+  }
+}

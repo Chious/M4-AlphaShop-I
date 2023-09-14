@@ -1,0 +1,36 @@
+@import "./mixin.scss";
+
+#header {
+  width: 100%;
+  background: white;
+  transition: 0.5;
+  @include ContainerPadding;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  gap: 1rem;
+
+  position: fixed;
+
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 40px 40px 40px;
+
+  .header-btn {
+    color: $main-text-color;
+
+    &:hover {
+      color: $hover-color;
+    }
+  }
+
+  nav {
+    display: flex;
+    gap: 1rem;
+    grid-column-start: 1;
+
+    a {
+      color: $main-text-color;
+    }
+  }
+}
