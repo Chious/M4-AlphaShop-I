@@ -13,9 +13,9 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/Chious/M4-AlphaShop-I](https://github.com/Chious/M4-AlphaShop-I)
-- Live Site URL: [Live Page](https://your-live-site-url.com)
+- Live Site URL: [https://bucolic-babka-ab5e95.netlify.app](https://bucolic-babka-ab5e95.netlify.app)
 
-#### How to fork the repo on local ?
+#### How to work the repo on local ?
 
 - Fork the repo
 - Open Github Desktop > File > Clone Repo
