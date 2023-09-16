@@ -39,6 +39,18 @@ Users should be able to:
 
 4. Revise component without content to self closing tag
 
+## Problem to slove
+
+1. 原本要設定 select button 的樣式，不過不知道為什麼沒有用（`Form.scss`）
+
+```css
+select::after {
+  z-index: 1;
+  content: "\25bc";
+  color: gray;
+}
+```
+
 ### Built with
 
 - CSS custom properties
