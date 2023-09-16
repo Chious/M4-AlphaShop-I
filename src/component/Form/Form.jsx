@@ -14,11 +14,11 @@ export default function Form() {
   const renderForm = () => {
     switch (shopStage) {
       case 1:
-        return <Step1></Step1>;
+        return <Step1 />;
       case 2:
-        return <Step2></Step2>;
+        return <Step2 />;
       case 3:
-        return <Step3></Step3>;
+        return <Step3 />;
     }
   };
 
@@ -43,7 +43,7 @@ export default function Form() {
             />
           </div>
           <div className="form-right">
-            <ShopList></ShopList>
+            <ShopList />
           </div>
         </div>
       </section>

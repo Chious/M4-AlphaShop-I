@@ -5,9 +5,9 @@ import Form from "./Form/Form";
 export default function MainPage() {
   return (
     <>
-      <Header></Header>
+      <Header />
       <Form />
-      <Footer></Footer>
+      <Footer />
     </>
   );
 }

@@ -18,9 +18,9 @@ export default function Header() {
           <a href="">聯絡我們</a>
         </nav>
 
-        <SearchIcon className="header-btn icon-search"></SearchIcon>
-        <ShoppingCartIcon className="header-btn icon-cart"></ShoppingCartIcon>
-        <NightlightIcon className="header-btn icon-moon"></NightlightIcon>
+        <SearchIcon className="header-btn icon-search" />
+        <ShoppingCartIcon className="header-btn icon-cart" />
+        <NightlightIcon className="header-btn icon-moon" />
       </section>
     </>
   );

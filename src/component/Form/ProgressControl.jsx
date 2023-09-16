@@ -17,7 +17,7 @@ export default function ProgressControl({ shopStage, setShopStage }) {
       </button>
       <button
         onClick={function (e) {
-          e.preventDefault;
+          e.preventDefault();
           if (shopStage < 3) {
             setShopStage(shopStage + 1);
           }
