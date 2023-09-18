@@ -10,13 +10,14 @@ import "../../style/Form.scss";
 
 export default function Form() {
   const [shopStage, setShopStage] = useState(1);
+  const [shipFee, setShipFee] = useState(0);
 
   const renderForm = () => {
     switch (shopStage) {
       case 1:
         return <Step1 />;
       case 2:
-        return <Step2 />;
+        return <Step2 setShipFee={setShipFee} />;
       case 3:
         return <Step3 />;
     }
@@ -43,7 +44,7 @@ export default function Form() {
             />
           </div>
           <div className="form-right">
-            <ShopList />
+            <ShopList shipFee={shipFee} />
           </div>
         </div>
       </section>

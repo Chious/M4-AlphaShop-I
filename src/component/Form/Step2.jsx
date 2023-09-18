@@ -1,12 +1,18 @@
 import style from "../../style/Step2.module.scss";
 
-export default function Step2() {
+export default function Step2({ setShipFee }) {
   return (
     <div className="step-content">
       <form className="col col-12" data-phase="shipping">
         <h3 className="form-title">運送方式</h3>
         <section className="form-body col col-12">
-          <label className={`${style.radioGroup} col col-12 data-price={0}`}>
+          <label
+            className={`${style.radioGroup} col col-12 data-price={0}`}
+            onClick={(e) => {
+              e.preventDefault();
+              setShipFee(0);
+            }}
+          >
             <input
               id="shipping-standard"
               type="radio"
@@ -16,18 +22,24 @@ export default function Step2() {
             <div className="radio-info">
               <div className="col col-12">
                 <div className="text">標準運送</div>
-                <div className="price" />
+                <div className="price">免費</div>
               </div>
               <div className="period col col-12">約 3~7 個工作天</div>
             </div>
             <div className="radio-box-border" />
           </label>
-          <label className={`${style.radioGroup} col col-12 data-price={500}`}>
+          <label
+            className={`${style.radioGroup} col col-12 data-price={500}`}
+            onClick={(e) => {
+              e.preventDefault();
+              setShipFee(500);
+            }}
+          >
             <input id="shipping-dhl" type="radio" name="shipping" />
             <div className="radio-info">
               <div className="col col-12">
                 <div className="text">DHL 貨運</div>
-                <div className="price" />
+                <div className="price">500</div>
               </div>
               <div className="period col col-12">48 小時內送達</div>
             </div>

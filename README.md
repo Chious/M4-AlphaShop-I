@@ -1,10 +1,12 @@
-# Alpha Camp Dev-C4-M4 - Alpha Shop
+# Alpha Camp Dev-C4-M4 - Alpha Shop II
+
+_This is frist submit of part II_
 
 ### The challenge
 
 Users should be able to:
 
-- Fill the payment info in the form
+- Add or delete items in the cart
 
 ### Screenshot
 
@@ -17,7 +19,7 @@ Users should be able to:
 
 #### How to fork the repo on local ?
 
-** Important: This submit is on the branch of `second-submut`**
+** Important: This submit is on the branch of `II-first-submut`**
 
 - Fork the repo
 - Open Github Desktop > File > Clone Repo
@@ -26,30 +28,23 @@ Users should be able to:
 
 ## Update
 
-- Header
+1. Add prop `setShipFee` on `Step2`, and `ShopList` could calculate sum of the price
 
-1. box-sizing: border-box
+2. In `SopList`
 
-- Form
-
-2. Apply css module to `Form`, so that we can set up grid respectly on `Step1`, `Step2` and `Step3`. And remove local setting from the global environment of `Form`
-3. Adjust input color to `gray`
-
-- all
-
-4. Revise component without content to self closing tag
+- Calculate total price of cart by `reduce()`, then add `ShipFee` saved as `TotalValue`
+- render `.product-container` by `Array.map()`
+- Create `handleImageClick`, and user can change amount of cart by clicking icons.
 
 ## Problem to slove
 
-1. 原本要設定 select button 的樣式，不過不知道為什麼沒有用（`Form.scss`）
+1. `Step2`
 
-```css
-select::after {
-  z-index: 1;
-  content: "\25bc";
-  color: gray;
-}
-```
+- 在 `label` 綁上 onClick 的功能之後，input 就不會根據選擇不同的方案更換圖示了，不知道問題出在哪。
+
+2. `ShopList`
+
+- 在使用者按下按鈕後，`handleImageClick()` 應該會找到該產品的 id 並更改 `Cart.json`的值、儲存在`data`，不知道為什麼改了之後物件內容就變成 undefine（詳見 console.log）。
 
 ### Built with
 
@@ -62,12 +57,9 @@ select::after {
 
 ### Useful resources
 
-- [How to use Sass in React](https://www.youtube.com/watch?v=9F8bzIlgJ4g)
-- [Apply CSS Module to SASS](https://blog.bitsrc.io/how-to-use-sass-and-css-modules-with-create-react-app-83fa8b805e5e)
-- [Apply Multiple clasName in SASS](https://www.codeconcisely.com/posts/react-css-modules-multiple-classes/)
-- [VS Code Extension - HTML to JSX](https://marketplace.visualstudio.com/items?itemName=riazxrazor.html-to-jsx) -- A useful tool to transfer html to JSX
-- [Pass useState as props](https://blog.logrocket.com/noobs-guide-to-usestate/#:~:text=Passing%20useState%20as%20props%20in,in%20all%20of%20your%20components.&text=This%20is%20a%20bad%20practice,never%20use%20useState%20like%20this.)
-- [CSS: border-box](https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing)
+- [When to use useEffect](https://www.freecodecamp.org/news/react-useeffect-absolute-beginners/#:~:text=If%20we%20need%20to%20perform,the%20component%20that%20it%27s%20in.)
+
+- [Calculate Summary in Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
 
 ## Author
 
