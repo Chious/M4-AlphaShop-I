@@ -57,11 +57,16 @@ function handleUserChange(e, UserInfoTarget){
     })
 }
 
+
 // <input>
 
 onClick={setUserInfo(e, "userName")}
 
 ```
+
+3. VS Code 的顯示 Bug，當使用 React props 的命名時會跳出紅字
+
+![](./screenshot2.png)
 
 ## Future Develop
 
