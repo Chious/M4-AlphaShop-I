@@ -21,7 +21,7 @@ export default function Form() {
       address_country: "",
       address_full: "",
     },
-    delivery: "",
+    delivery: 0,
     payment: {
       cardName: "",
       cardId: "",
@@ -62,7 +62,7 @@ export default function Form() {
             />
           </div>
           <div className="form-right">
-            <ShopList></ShopList>
+            <ShopList shipFee={shipFee} />
           </div>
         </div>
       </section>

@@ -1,4 +1,4 @@
-import "../../style/Step1.scss";
+import style from "../../style/Step1.module.scss";
 
 export default function Step1({ userInfo, setUserInfo }) {
   function handleGenderChange(e) {
@@ -48,8 +48,8 @@ export default function Step1({ userInfo, setUserInfo }) {
       <div className="step-content">
         <form className="col col-12" data-phase="address">
           <h3 className="form-title">寄送地址</h3>
-          <section className="form-body col col-12">
-            <div className="col col-12">
+          <section className={`${style.formBody} form-body`}>
+            <div className={style.formBody__col1}>
               <div className="input-group input-w-lg-2 input-w-sm-s1">
                 <div className="input-label">稱謂</div>
                 <div className="select-container">
@@ -75,7 +75,7 @@ export default function Step1({ userInfo, setUserInfo }) {
                 />
               </div>
             </div>
-            <div className="col col-12">
+            <div className={style.formBody__col2}>
               <div className="input-group input-w-lg-3 input-w-sm-full">
                 <div className="input-label">電話</div>
                 <input
@@ -95,7 +95,7 @@ export default function Step1({ userInfo, setUserInfo }) {
                 />
               </div>
             </div>
-            <div className="col col-12">
+            <div className={style.formBody__col3}>
               <div className="input-group">
                 <div className="input-label">縣市</div>
                 <div className="select-container">

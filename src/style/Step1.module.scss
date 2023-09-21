@@ -1,0 +1,23 @@
+.formBody {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  &__col1 {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 20px;
+  }
+
+  &__col2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+
+  &__col3 {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 20px;
+  }
+}

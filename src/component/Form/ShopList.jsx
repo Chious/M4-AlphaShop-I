@@ -21,7 +21,6 @@ export default function ShopList({ shipFee }) {
         ? { ...item, quantity: item.quantity + changeAmount }
         : item;
     });
-
     setData(updatedData);
   };
 

@@ -68,6 +68,8 @@ onClick={setUserInfo(e, "userName")}
 
 ![](./screenshot2.png)
 
+4. 第一次被版本控制搞到了，新增分支的時候慎選！
+
 ## Future Develop
 
 - useContext to manage state
