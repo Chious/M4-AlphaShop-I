@@ -24,7 +24,7 @@ Users should be able to:
 
 #### How to fork the repo on local ?
 
-** Important: This submit is on the branch of `II-first-submut`**
+** Important: This submit is on the branch of `III-first-submit`**
 
 - Fork the repo
 - Open Github Desktop > File > Clone Repo
