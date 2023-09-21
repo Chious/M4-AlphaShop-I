@@ -1,6 +1,48 @@
 import "../../style/Step1.scss";
 
-export default function Step1() {
+export default function Step1({ userInfo, setUserInfo }) {
+  function handleGenderChange(e) {
+    setUserInfo({
+      ...userInfo,
+      user: { ...userInfo.user, gender: e.target.value },
+    });
+  }
+
+  function handlefullNameChange(e) {
+    setUserInfo({
+      ...userInfo,
+      user: { ...userInfo.user, fullName: e.target.value },
+    });
+  }
+
+  function handlePhoneChange(e) {
+    setUserInfo({
+      ...userInfo,
+      user: { ...userInfo.user, phone: e.target.value },
+    });
+  }
+
+  function handleEmailChange(e) {
+    setUserInfo({
+      ...userInfo,
+      user: { ...userInfo.user, email: e.target.value },
+    });
+  }
+
+  function handleAddressCountryChange(e) {
+    setUserInfo({
+      ...userInfo,
+      user: { ...userInfo.user, address_country: e.target.value },
+    });
+  }
+
+  function handleAddressFullChange(e) {
+    setUserInfo({
+      ...userInfo,
+      user: { ...userInfo.user, address_full: e.target.value },
+    });
+  }
+
   return (
     <>
       <div className="step-content">
@@ -11,7 +53,10 @@ export default function Step1() {
               <div className="input-group input-w-lg-2 input-w-sm-s1">
                 <div className="input-label">稱謂</div>
                 <div className="select-container">
-                  <select>
+                  <select
+                    value={userInfo.user.gender}
+                    onChange={handleGenderChange}
+                  >
                     <option value="mr" selected>
                       先生
                     </option>
@@ -22,24 +67,43 @@ export default function Step1() {
               </div>
               <div className="input-group input-w-lg-4 input-w-sm-s2">
                 <div className="input-label">姓名</div>
-                <input type="text" placeholder="請輸入姓名" />
+                <input
+                  type="text"
+                  placeholder="請輸入姓名"
+                  value={userInfo.user.fullName}
+                  onChange={handlefullNameChange}
+                />
               </div>
             </div>
             <div className="col col-12">
               <div className="input-group input-w-lg-3 input-w-sm-full">
                 <div className="input-label">電話</div>
-                <input type="tel" placeholder="請輸入行動電話" />
+                <input
+                  type="tel"
+                  placeholder="請輸入行動電話"
+                  value={userInfo.user.phone}
+                  onChange={handlePhoneChange}
+                />
               </div>
               <div className="input-group input-w-lg-3 input-w-sm-full">
                 <div className="input-label">Email</div>
-                <input type="email" placeholder="請輸入電子郵件" />
+                <input
+                  type="email"
+                  placeholder="請輸入電子郵件"
+                  value={userInfo.user.email}
+                  onChange={handleEmailChange}
+                />
               </div>
             </div>
             <div className="col col-12">
               <div className="input-group">
                 <div className="input-label">縣市</div>
                 <div className="select-container">
-                  <select required>
+                  <select
+                    required
+                    value={userInfo.user.address_country}
+                    onChange={handleAddressCountryChange}
+                  >
                     <option value>請選擇縣市</option>
                     <option value="KLU">基隆市</option>
                     <option value="TPH">新北市</option>
@@ -76,7 +140,12 @@ export default function Step1() {
 
               <div className="input-group input-w-lg-4 input-w-sm-full">
                 <div className="input-label">地址</div>
-                <input type="text" placeholder="請輸入地址" />
+                <input
+                  type="text"
+                  placeholder="請輸入地址"
+                  value={userInfo.user.address_full}
+                  onChange={handleAddressFullChange}
+                />
               </div>
             </div>
           </section>

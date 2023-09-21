@@ -1,10 +1,17 @@
-# Alpha Camp Dev-C4-M4 - Alpha Shop
+# Alpha Camp Dev-C4-M5 - Alpha Shop III
+
+_This is frist submit of part III_
 
 ### The challenge
 
 Users should be able to:
 
-- Fill the payment info in the form
+- RWD View in Website
+
+## NEW!!
+
+- Add or delete items in the cart
+- Save User input in the form
 
 ### Screenshot
 
@@ -12,66 +19,69 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://github.com/Chious/M4-AlphaShop-I](https://github.com/Chious/M4-AlphaShop-I)
-- Live Site URL: [https://bucolic-babka-ab5e95.netlify.app](https://bucolic-babka-ab5e95.netlify.app)
+- Solution URL（branch：III-first-submit）: [https://github.com/Chious/M4-AlphaShop-I](https://github.com/Chious/M4-AlphaShop-I)
+- Live Site URL: [Live Page](https://your-live-site-url.com)
 
-#### How to work the repo on local ?
+#### How to fork the repo on local ?
+
+** Important: This submit is on the branch of `II-first-submut`**
 
 - Fork the repo
 - Open Github Desktop > File > Clone Repo
 - open document and type `npm i ` on terminal
 - type `npm run dev` in terminal
 
-## My process
+## Update
 
-1. import add needed develop tools:
+1. `StepProgress`、`StepProgressControl`、`ShopList`、`Step`：Add useState individulally, and save the state in the `Form`
 
-On Vcode:
+- data: content of the cart
+- shipFee: payment of ship fee
+- userInfo: content of the submit form
 
-- Prettier
-- html to jsx
+## 已知 Bug
 
-Module:
+1. `Step2`
 
-```scss
-npm i sass
-npm install @svgr/webpack --save-dev /* enable to import svg in Vite */
+- 不知道為什麼 Delivery 沒辦法更新 State 的值
+- Button UI 無法正確顯示，不知道為什麼
+
+2. 關於 `handleUserInfoChange`目前是一個一個 function 寫，我有考慮過改寫成這樣，不過沒有成功。
+
+```js
+function handleUserChange(e, UserInfoTarget){
+    e.preventDefault();
+
+    setUserInfo({
+        ...userInfo, user{...userInfo.user,UserInfoTarget: e.target.value}
+    })
+}
+
+// <input>
+
+onClick={setUserInfo(e, "userName")}
+
 ```
 
-2. Basic HTML and CSS Reset in `App.scss` and import font (10min)
+## Future Develop
 
-- CSS Reset: http://meyerweb.com/eric/tools/css/reset/
-- Google Font: https://fonts.google.com/noto/specimen/Noto+Sans+TC
-
-3. Create all needed component and save jsx in `component` and scss in `style` (30min)
-
-![](./screenshot2.png)
-
-4. Complete Form Component (5hr)
-
-5. Complete Footer and Header (3hr)
-
-### Problem to slove
-
-1. Header 的長度不知道為什麼會超出`100vw`的版面。
-2. 在設定 `Step1`、 `Step2`、 `Step3`時，想要分別套用 CSS Grid，不過發現好像混在一起了，不確定要怎麼做才不會污染到其他的元素。
-3. Form component 的 CSS 待細修
-4. 待調整 User List 的排版
+- useContext to manage state
+- update form data to back-end (by using Google App Script) after clicking button in `Step3`
+- Limit rule of form input
+- Adjust CSS setting
 
 ### Built with
 
 - CSS custom properties
 - Flexbox
 - CSS Grid
+- CSS Module
 - SASS - to manage css component
 - React Vite
 
 ### Useful resources
 
-- [How to use Sass in React](https://www.youtube.com/watch?v=9F8bzIlgJ4g)
-- [VS Code Extension - HTML to JSX](https://marketplace.visualstudio.com/items?itemName=riazxrazor.html-to-jsx) -- A useful tool to transfer html to JSX
-
-- [Pass useState as props](https://blog.logrocket.com/noobs-guide-to-usestate/#:~:text=Passing%20useState%20as%20props%20in,in%20all%20of%20your%20components.&text=This%20is%20a%20bad%20practice,never%20use%20useState%20like%20this.)
+- [handle useState Event](https://react.dev/learn/updating-objects-in-state)
 
 ## Author
 
