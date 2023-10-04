@@ -1,17 +1,19 @@
-# Alpha Camp Dev-C4-M5 - Alpha Shop III
+# Alpha Camp Dev-C4-M5 - Alpha Shop IIII
 
-_This is frist submit of part III_
+_This is frist submit of part IIII_
 
 ### The challenge
 
 Users should be able to:
 
 - RWD View in Website
+- Show Shopping Cart in the view
+- Submit UserInfo after clicked
 
-## NEW!!
+## Update
 
-- Add or delete items in the cart
-- Save User input in the form
+- remove useState in component and use `StateProvider.jsx` to manage state.
+- console.log `userInfo` after clicking submit.
 
 ### Screenshot
 
@@ -19,7 +21,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL（branch：III-first-submit）: [https://github.com/Chious/M4-AlphaShop-I](https://github.com/Chious/M4-AlphaShop-I)
+- Solution URL（branch：IIII-first-submit）: [https://github.com/Chious/M4-AlphaShop-I](https://github.com/Chious/M4-AlphaShop-I)
 - Live Site URL: [Live Page](https://your-live-site-url.com)
 
 #### How to fork the repo on local ?
@@ -31,44 +33,50 @@ Users should be able to:
 - open document and type `npm i ` on terminal
 - type `npm run dev` in terminal
 
-## Update
+## My Process
 
-1. `StepProgress`、`StepProgressControl`、`ShopList`、`Step`：Add useState individulally, and save the state in the `Form`
-
-- data: content of the cart
-- shipFee: payment of ship fee
-- userInfo: content of the submit form
-
-## 已知 Bug
-
-1. `Step2`
-
-- 不知道為什麼 Delivery 沒辦法更新 State 的值
-- Button UI 無法正確顯示，不知道為什麼
-
-2. 關於 `handleUserInfoChange`目前是一個一個 function 寫，我有考慮過改寫成這樣，不過沒有成功。
-
-```js
-function handleUserChange(e, UserInfoTarget){
-    e.preventDefault();
-
-    setUserInfo({
-        ...userInfo, user{...userInfo.user,UserInfoTarget: e.target.value}
-    })
-}
-
-
-// <input>
-
-onClick={setUserInfo(e, "userName")}
+1. Create `StateContext`
 
 ```
+StateContext = createContext();
+```
 
-3. VS Code 的顯示 Bug，當使用 React props 的命名時會跳出紅字
+2. `StateProvider` would return ContextProvider
 
-![](./screenshot2.png)
+```
+    <StateContext.Provider value={{ state, setState,... }}>
+      {children}
+    </StateContext.Provider>
+```
 
-4. 第一次被版本控制搞到了，新增分支的時候慎選！
+3. create `useStateContext`, so component could access to value of useContext
+
+```
+export const useStateContext = () => useContext(StateContext);
+```
+
+4. remove unnecessary useState.
+
+## 已知 Bugs
+
+1. `Step2`：`input[type=radius]`的 UI 顯示錯誤，已經卡了一個月了。
+
+2. Form submit rule should be added to check if valid of form.
+
+3. Try to send `userInfo` to backend in the future.
+
+4. Why `Step2` show error while `userInfo` and `setUserInfo` is define and work in React ?
+   ![](./screenshot2.png)
+
+5. How to aviod VS code warning message while
+
+```
+function({props})
+```
+
+is valid in React ?
+
+![](./screenshot3.png)
 
 ## Future Develop
 
@@ -94,4 +102,6 @@ onClick={setUserInfo(e, "userName")}
 
 - Github - [邱佳昇](https://github.com/Chious)
 
-## Acknowledgments None
+## Acknowledgments
+
+None

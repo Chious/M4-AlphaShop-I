@@ -1,4 +1,7 @@
-export default function ProgressControl({ shopStage, setShopStage }) {
+export default function ProgressControl({ shopStage, setShopStage, userInfo }) {
+  const handleSubmit = () => {
+    console.log(userInfo);
+  };
   return (
     <div
       className="progress-control"
@@ -20,6 +23,10 @@ export default function ProgressControl({ shopStage, setShopStage }) {
           e.preventDefault;
           if (shopStage < 3) {
             setShopStage(shopStage + 1);
+          }
+
+          if (shopStage === 3) {
+            handleSubmit();
           }
         }}
       >

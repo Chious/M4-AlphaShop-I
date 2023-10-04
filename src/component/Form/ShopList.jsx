@@ -1,13 +1,14 @@
-import jsonData from "./Cart.json";
+import jsonData from "../Form/Cart.json";
 
 import "../../style/ShopList.scss";
 
 import RemoveCircleSharpIcon from "@mui/icons-material/RemoveCircleSharp";
 import AddCircleSharpIcon from "@mui/icons-material/AddCircleSharp";
-import { useState } from "react";
 
-export default function ShopList({ shipFee }) {
-  const [data, setData] = useState(jsonData);
+import { useStateContext } from "../Context/StateProvider";
+
+export default function ShopList() {
+  const { data, setData, shipFee } = useStateContext();
 
   let Value = data.reduce((total, item) => {
     const itemValue = item.price * item.quantity;

@@ -1,10 +1,13 @@
+import { StatePovider } from "./component/Context/StateProvider";
 import MainPage from "./component/MainPage";
 import "./style/App.scss";
 
 function App() {
   return (
     <>
-      <MainPage></MainPage>
+      <StatePovider>
+        <MainPage />
+      </StatePovider>
     </>
   );
 }

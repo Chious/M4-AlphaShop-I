@@ -5,30 +5,13 @@ import ProgressControl from "./ProgressControl";
 import ShopList from "./ShopList";
 import StepProgress from "./StepProgress";
 
-import { useState } from "react";
+import { useStateContext } from "../Context/StateProvider";
+
 import "../../style/Form.scss";
 
 export default function Form() {
-  const [shopStage, setShopStage] = useState(1);
-
-  const [shipFee, setShipFee] = useState(0);
-  const [userInfo, setUserInfo] = useState({
-    user: {
-      gender: "mr",
-      fullName: "",
-      phone: "",
-      email: "",
-      address_country: "",
-      address_full: "",
-    },
-    delivery: 0,
-    payment: {
-      cardName: "",
-      cardId: "",
-      cardDuration: "",
-      cardCVC: "",
-    },
-  });
+  const { shopStage, setShopStage, setShipFee, userInfo, setUserInfo } =
+    useStateContext();
 
   const renderForm = () => {
     switch (shopStage) {
@@ -59,10 +42,11 @@ export default function Form() {
             <ProgressControl
               shopStage={shopStage}
               setShopStage={setShopStage}
+              userInfo={userInfo}
             />
           </div>
           <div className="form-right">
-            <ShopList shipFee={shipFee} />
+            <ShopList />
           </div>
         </div>
       </section>

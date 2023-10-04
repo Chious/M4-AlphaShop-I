@@ -1,13 +1,6 @@
 import style from "../../style/Step3.module.scss";
 
 export default function Step3({ userInfo, setUserInfo }) {
-  function handleAddressFullChange(e) {
-    setUserInfo({
-      ...userInfo,
-      payment: { ...userInfo.payment, address_full: e.target.value },
-    });
-  }
-
   function handleCardNameChange(e) {
     setUserInfo({
       ...userInfo,
